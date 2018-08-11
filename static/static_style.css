@@ -1,0 +1,8 @@
+html, body { height:100%; margin:0; padding:0 }
+div { position:fixed; width:50%; height:50% }
+#A1 { top:0;   left:0}
+#A2 { top:0;   left:50%}
+#B1 { top:33%; left:0}
+#B2 { top:33%; left:50%}
+#C1 { top:66%; left:0}
+#C2 { top:66%; left:50%}

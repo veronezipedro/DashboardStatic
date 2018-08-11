@@ -1,0 +1,116 @@
+<!-- Results page for Flask Weather App -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LIFE DASHBOARD</title>
+    <!-- Latest compiled and minified CSS from Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Fonts from Google -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <!-- Emojis for Fun -->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Import stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/weather-icons.css">
+    <style>
+        body {
+            background-color: {{ color }};
+        }
+
+        h1, h3 {
+            color: {{ font }};
+        }
+    </style>
+</head>
+<body>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!-- Row 1 -->
+            <div class="row">
+                <!-- quadro 1 A -->
+                <div class="col-sm">
+                    <!-- Choose icon to display using jinja if/else statements -->
+                    {% if icon == 'rain' %}
+                        <div class="icon rainy">
+                            <div class="cloud"></div>
+                            <div class="rain"></div>
+                        </div>
+                    {% elif icon == 'thunder' %}
+                        <div class="icon thunder-storm">
+                            <div class="cloud"></div>
+                            <div class="lightning">
+                                <div class="bolt"></div>
+                                <div class="bolt"></div>
+                            </div>
+                        </div>
+                    {% elif icon == 'snow' %}
+                        <div class="icon flurries">
+                            <div class="cloud"></div>
+                            <div class="snow">
+                                <div class="flake"></div>
+                                <div class="flake"></div>
+                            </div>
+                      </div>
+                    {% elif icon == 'sun' %}
+                        <div class="icon sunny">
+                            <div class="sun">
+                                <div class="rays"></div>
+                            </div>
+                      </div>
+                    {% elif icon == 'cloud' %}
+                        <div class="icon cloudy">
+                            <div class="cloud"></div>
+                            <div class="cloud"></div>
+                        </div>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        <h3 class="col-xs-4 col-sm-4 col-md-4 col-lg-4">{{ temp }}&deg;F &#43; {{ description }}</h3>
+                    </div>
+
+                    <!-- Determine messaging to display to user based on weather -->
+                    {% if is_jacket %}
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                            <h3 class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><i class="em em---1"></i> you should wear a jacket <i class="em em-plus1"></i></h3>
+                        </div>
+                    {% elif not is_jacket %}
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                            <h3 class="col-xs-4 col-sm-4 col-md-4 col-lg-4">you should be <i class="em em-ok_hand"></i> without a jacket</h3>
+                        </div>
+                    {% endif %}
+                </div>
+                <!-- quadro 1 B -->
+                <div class="col-sm">
+                    <iframe src="https://dv.njtransit.com/webdisplay/tid-mobile.aspx?sid=HB" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+            <!-- row 2 -->
+            <div class="row">
+                <!-- quadro 1 A -->
+                <div class="col-sm">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=kate.and.pedro%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <!-- quadro 1 B -->
+                <div class="col-sm">
+                    <iframe class="col-sm" width=480 height=520 frameborder=0 src="https://www.wunderlist.com/#/lists/360169939"></iframe>
+                </div>
+            </div>
+            <!-- row 3 -->
+            <div class="row">
+                <!-- quadro 1 A -->
+                <div class="col-sm">
+
+                </div>
+                <!-- quadro 1 B -->
+                <div class="col-sm">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

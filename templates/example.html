@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LIfeDash</title>
+
+    <!-- this enables the chrome extension to start working for this page-->
+    <meta name="dashboard" />
+    <meta http-equiv="refresh" content="60" />
+
+</head>
+<body>
+
+<script type="text/css" id="weather">
+    .currentconditions {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        width: 600px;
+        z-index: 1000;
+    }
+
+    #doppler {
+        display: none;
+    }
+</script>
+
+<!-- <script src="/static/content.js"> </script> -->
+
+<iframe id="frame1" src="https://calendar.google.com/calendar/embed?src=kate.and.pedro%40gmail.com&ctz=America%2FNew_York"
+        style="border: 0" width="600" height="350"></iframe>
+
+<iframe id="frame2" src="http://dv.njtransit.com/webdisplay/tid-mobile.aspx?sid=HB#GridView1"
+        style="border: 0" data-refresh="30" data-scroll-y="50" height="350" width="50%"></iframe>
+
+<iframe id="frame3" id="forecast_embed" frameborder="0" width="600" height="345" data-refresh="30"
+        style="border: 0" src="//forecast.io/embed/#lat=40.7440&lon=-74.0324&name=Hoboken"></iframe>
+
+<iframe id="frame4" style="border: 0" width="600" height=345 frameborder=0 data-refresh="120" data-scroll-y="100"
+        src="https://www.wunderlist.com/#/lists/317406957#audio-player"></iframe>
+
+</body>
+</html>
